@@ -1,0 +1,33 @@
+.navbar {
+  background: #8c9294;
+  padding: 0.5em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.input > input {
+  outline: none;
+  border: none;
+  background-color: white;
+  padding: 0.1em;
+  width: 90%;
+  margin: 10px;
+  height: 90%;
+}
+.input {
+  background-color: white;
+  border-radius: 10px;
+  flex: 0.6;
+
+  /* border: 3px solid black; */
+}
+
+.nav_right_side {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex: 0.2;
+}
+.nav_right_side > img {
+  width: 45px;
+}

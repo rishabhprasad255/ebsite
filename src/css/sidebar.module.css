@@ -1,0 +1,26 @@
+.sidebar {
+  background: #8c9294;
+  position: fixed;
+  height: 100%;
+  width: 250px;
+  box-shadow: 0 5px 10px gray;
+}
+
+.sidebar ul {
+  margin-top: 3.5em;
+  text-align: center;
+}
+
+.sidebar ul li {
+  /* background: rgb(221, 219, 219); */
+  padding: 10px;
+  margin: 10px 0;
+  font-size: 1.4rem;
+  cursor: pointer;
+  color: white;
+}
+
+.sidebar ul li:hover {
+  background: rgb(238, 238, 238) !important;
+  color: black !important;
+}
