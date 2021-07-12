@@ -10,10 +10,10 @@ const Appcontextfun = ({ children }) => {
   };
 
   const listItems = [
-    { id: 1, name: "Home", i: "home" },
-    { id: 2, name: "Orders", i: "cube" },
-    { id: 3, name: "Cart", i: "shopping-cart" },
-    { id: 4, name: "Contact", i: "address-book" },
+    { id: 1, name: "Home", i: "home", link: "/products" },
+    { id: 2, name: "Orders", i: "cube", link: "/orders" },
+    { id: 3, name: "Cart", i: "shopping-cart", link: "/cart" },
+    { id: 4, name: "Contact", i: "address-book", link: "/contact" },
   ];
 
   return (

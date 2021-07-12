@@ -8,12 +8,8 @@
   transition: transform 0.8s ease;
 }
 
-.sidebar.open {
-  transform: translateX(0);
-}
-
 .sidebar ul {
-  margin-top: 3.5em;
+  margin-top: 70px;
 }
 .sidebar i {
   margin: 0 15px;

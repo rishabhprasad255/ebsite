@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import style from "../css/sidebar.module.css";
 import { useAppContext } from "./UsingContext";
-
+import { Link } from "react-router-dom";
 function Sidebar() {
   const { isSidebarOpen } = useAppContext();
 
@@ -29,7 +29,7 @@ function Sidebar() {
 
   const highlight = (e) => {
     setTransparent();
-    // hideSideBar();
+    hideSideBar();
     document.getElementById(e.target.id).style.background = "white";
     document.getElementById(e.target.id).style.color = "black";
   };
@@ -37,11 +37,17 @@ function Sidebar() {
   return (
     <div id="sidebar" className={style.sidebar}>
       <ul>
-        {listItems.map(({ id, name, onclick, i }) => (
-          <li key={id} id={`list${id}`} onClick={highlight}>
-            <i class={`fas fa-${i}`}></i>
-            {name}
-          </li>
+        {listItems.map(({ id, name, i, link }) => (
+          <Link
+            to={link}
+            key={id}
+            style={{ textDecoration: "none", color: "white" }}
+          >
+            <li id={`list${id}`} onClick={highlight}>
+              <i className={`fas fa-${i}`}></i>
+              {name}
+            </li>
+          </Link>
         ))}
       </ul>
       <div className={style.shrinker} onClick={hideSideBar}>
