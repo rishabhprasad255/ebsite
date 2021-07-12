@@ -4,6 +4,12 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  height: 70px;
+}
+
+.navbar img {
+  width: 30px;
+  cursor: pointer;
 }
 .input > input {
   outline: none;
@@ -27,7 +33,4 @@
   justify-content: space-around;
   align-items: center;
   flex: 0.2;
-}
-.nav_right_side > img {
-  width: 45px;
 }

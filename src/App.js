@@ -1,35 +1,22 @@
-import React,{useContext} from 'react'
-import './App.css';
-import {Switch,Route,Redirect} from "react-router-dom";
-import Home from './Screens/Home'
-import {useAppContext} from './components/UsingContext';
-import Navbar from './components/Navbar';
-import Sidebar from './components/Sidebar';
-import {AppProvider} from './components/UsingContext'
-
+import React from "react";
+import "./App.css";
+import { Switch, Route, Redirect } from "react-router-dom";
+import Home from "./Screens/Home";
+import Navbar from "./components/Navbar";
+import Sidebar from "./components/Sidebar";
 
 function AppRouter() {
-  const {isSidebarOpen}=useAppContext();
+  return (
+    <>
+      <Sidebar />
+      <Navbar />
 
-  
-  
-  return (  
-      <>
-      {isSidebarOpen && <Sidebar /> }
-      <Navbar/>
-      
-      
+      <Redirect from="/" to="/products" />
       <Switch>
-
-        <Route path="/" component={Home} />
-
+        <Route path="/products" component={Home} />
       </Switch>
-      </>
-
-  )
+    </>
+  );
 }
 
-export default AppRouter
-
-
-
+export default AppRouter;

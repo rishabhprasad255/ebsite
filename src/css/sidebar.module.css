@@ -3,24 +3,57 @@
   position: fixed;
   height: 100%;
   width: 250px;
-  box-shadow: 0 5px 10px gray;
+  box-shadow: 0 5px 20px gray;
+  transform: translateX(-150%);
+  transition: transform 0.8s ease;
+}
+
+.sidebar.open {
+  transform: translateX(0);
 }
 
 .sidebar ul {
   margin-top: 3.5em;
-  text-align: center;
 }
-
+.sidebar i {
+  margin: 0 15px;
+}
 .sidebar ul li {
-  /* background: rgb(221, 219, 219); */
   padding: 10px;
   margin: 10px 0;
-  font-size: 1.4rem;
+  margin-left: 15px;
+  font-size: 1.3rem;
   cursor: pointer;
+  display: block;
   color: white;
+  border-radius: 5px 0 0 5px;
+  transition: all 0.3s ease;
 }
 
 .sidebar ul li:hover {
-  background: rgb(238, 238, 238) !important;
+  background: rgb(221, 219, 219) !important;
   color: black !important;
+}
+
+.shrinker {
+  background: white;
+  font-weight: bold;
+  color: rgb(83, 80, 80);
+  position: absolute;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  top: 50%;
+  box-shadow: 0 5px 20px gray;
+  transform: translate(100%, -50%);
+  width: 25px;
+  height: 90px;
+  background: white;
+  border-radius: 0 90px 90px 0;
+}
+
+.shrinker:hover {
+  background: #eee;
 }

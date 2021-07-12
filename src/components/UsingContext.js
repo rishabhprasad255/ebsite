@@ -9,8 +9,15 @@ const Appcontextfun = ({ children }) => {
     isSidebarOpen ? setisSidebarOpen(false) : setisSidebarOpen(true);
   };
 
+  const listItems = [
+    { id: 1, name: "Home", i: "home" },
+    { id: 2, name: "Orders", i: "cube" },
+    { id: 3, name: "Cart", i: "shopping-cart" },
+    { id: 4, name: "Contact", i: "address-book" },
+  ];
+
   return (
-    <AppContext.Provider value={{ isSidebarOpen, hideSideBar }}>
+    <AppContext.Provider value={{ isSidebarOpen, hideSideBar, listItems }}>
       {children}
     </AppContext.Provider>
   );
