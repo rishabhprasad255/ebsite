@@ -9,8 +9,10 @@ const Appcontextfun = ({ children }) => {
     isSidebarOpen ? setisSidebarOpen(false) : setisSidebarOpen(true);
   };
 
+  
+
   const listItems = [
-    { id: 1, name: "Home", i: "home", link: "/products" },
+    { id: 1, name: "Home", i: "home", link: "/" },
     { id: 2, name: "Orders", i: "cube", link: "/orders" },
     { id: 3, name: "Cart", i: "shopping-cart", link: "/cart" },
     { id: 4, name: "Contact", i: "address-book", link: "/contact" },

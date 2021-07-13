@@ -6,6 +6,7 @@
   box-shadow: 0 5px 20px gray;
   transform: translateX(-150%);
   transition: transform 0.8s ease;
+  z-index: 100;
 }
 
 .sidebar ul {
@@ -52,4 +53,7 @@
 
 .shrinker:hover {
   background: #eee;
+}
+
+@media (max-width: 1250px) {
 }

@@ -1,7 +1,9 @@
-[
+
+
+export const home_products=[
   {
     "id": 1,
-    "title": "Dresses, Bra, Nighties",
+    "title": "Dresses....",
     "category": "Miss Chase, Quttos...",
     "price": "Upto 70% Off",
     "image": "https://rukminim1.flixcart.com/image/150/150/kjswia80/dress/4/p/u/xl-120tkr2664-selvia-original-imafzagghj6fbfdj.jpeg?q=70",

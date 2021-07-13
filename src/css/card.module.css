@@ -1,0 +1,51 @@
+.a {
+  border-radius: 10px;
+  box-shadow: 0 2px 5px gray;
+  font-size: 0.8rem;
+  margin: 10px;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 10px;
+}
+
+.card {
+  width: 100%;
+  text-align: center;
+}
+
+.card img {
+  height: 150px;
+  object-fit: contain;
+  border-radius: 10px;
+  margin: 10px 0;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  font-weight: bold;
+  width: 100%;
+}
+.info span {
+  font-size: 15px;
+}
+
+.info div {
+  color: rgb(21, 116, 21);
+}
+
+.a:hover {
+  background: #eee;
+}
+
+.card img:hover {
+  transform: scale(1.1);
+  transition: transform 0.2s linear;
+}

@@ -7,9 +7,13 @@
   height: 70px;
 }
 
-.navbar img {
-  width: 30px;
+.navbar svg {
+  width: 50px;
+  color: white;
   cursor: pointer;
+}
+.navbar svg:hover {
+  color: black;
 }
 .input > input {
   outline: none;
@@ -19,11 +23,22 @@
   width: 90%;
   margin: 10px;
   height: 90%;
+  font-size: 1rem;
+}
+.input > img {
+  background-color: #8c9294;
+  cursor: pointer;
+  border-radius: 10px;
+  width: 30px;
+  margin: 5px;
+  padding: 7px;
 }
 .input {
   background-color: white;
   border-radius: 10px;
   flex: 0.6;
+  display: flex;
+  justify-content: space-between;
 
   /* border: 3px solid black; */
 }
@@ -32,5 +47,35 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
-  flex: 0.2;
+  flex: 0.3;
+  height: 40px;
+}
+.nav_right_side > a {
+  color: white;
+  font-weight: bolder;
+}
+.nav_right_side > a:hover {
+  color: black;
+}
+.cart > svg {
+  width: 50px;
+  height: 30px;
+}
+
+@media (max-width: 1250px) {
+  .nav_right_side {
+    flex: 0.1;
+  }
+
+  .nav_right_side > a {
+    display: none;
+  }
+  .nav_right_side > a:nth-of-type(4) {
+    display: block;
+  }
+}
+@media (max-width: 750px) {
+  .input {
+    flex: 0.8;
+  }
 }

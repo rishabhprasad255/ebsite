@@ -1,0 +1,31 @@
+.carousel {
+  width: 75%;
+  height: fit-content;
+  box-shadow: 0 2px 10px rgb(148, 145, 145);
+  border-radius: 10px;
+  overflow: hidden;
+  margin: 20px auto;
+}
+.carousel h3 {
+  font-size: 1.3rem;
+}
+
+.carousel img {
+  height: 450px;
+  object-fit: fill;
+}
+
+@media (max-width: 1250px) {
+  .carousel img {
+    height: 280px;
+  }
+}
+@media (max-width: 650px) {
+  .carousel img {
+    height: 180px;
+    object-fit: cover;
+  }
+  .carousel h3 {
+    font-size: 1rem;
+  }
+}
