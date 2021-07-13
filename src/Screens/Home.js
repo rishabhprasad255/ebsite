@@ -1,13 +1,11 @@
 import React from 'react'
-
-import {useAppContext} from '../components/UsingContext'
-
+import style from "../css/home.module.css"
 function Home() {
     
 
     return (
-        <div>
-        
+        <div className={style.home}>
+        Home here
         </div>
     )
 }
