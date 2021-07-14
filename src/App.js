@@ -6,7 +6,7 @@ import Navbar from "./components/Navbar";
 import Sidebar from "./components/Sidebar";
 import Orders from "./Screens/Orders";
 import Cart from "./Screens/Cart";
-import Contact from "./Screens/Contact";
+import Support from "./Screens/Support";
 import Error from "./Screens/Error";
 import User from "./Screens/User";
 import More from "./Screens/More";
@@ -29,7 +29,7 @@ function AppRouter() {
         <Route exact path="/home" component={Home} />
         <Route exact path="/orders" component={Orders} />
         <Route exact path="/cart" component={Cart} />
-        <Route exact path="/contact" component={Contact} />
+        <Route exact path="/support" component={Support} />
         <Route exact path="/user" component={User} />
         <Route exact path="/more" component={More} />
         <Route path="*" component={Error} />

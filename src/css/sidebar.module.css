@@ -1,5 +1,5 @@
 .sidebar {
-  background: #8c9294;
+  background: #046a8b;
   position: fixed;
   height: 100vh;
   width: 280px;
@@ -28,7 +28,7 @@
 }
 
 .sidebar ul li:hover {
-  background: rgb(221, 219, 219) !important;
+  background: rgb(45, 124, 177) !important;
   color: black !important;
 }
 

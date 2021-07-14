@@ -80,7 +80,7 @@ function Sidebar() {
         <Link to="/more" style={{ textDecoration: "none", color: "white" }}>
           <li id="list5" onClick={highlight}>
             <i className={`fas fa-info`}></i>
-            More
+             More
           </li>
         </Link>
       </ul>
