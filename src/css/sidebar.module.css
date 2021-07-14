@@ -1,8 +1,8 @@
 .sidebar {
   background: #8c9294;
   position: fixed;
-  height: 100%;
-  width: 250px;
+  height: 100vh;
+  width: 280px;
   box-shadow: 0 5px 20px gray;
   transform: translateX(-150%);
   transition: transform 0.8s ease;

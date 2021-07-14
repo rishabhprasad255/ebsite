@@ -1,31 +1,38 @@
 import React from "react";
 import "./App.css";
-import { Switch, Route} from "react-router-dom";
+import { Switch, Route, Redirect, useLocation } from "react-router-dom";
 import Home from "./Screens/Home";
 import Navbar from "./components/Navbar";
 import Sidebar from "./components/Sidebar";
 import Orders from "./Screens/Orders";
 import Cart from "./Screens/Cart";
 import Contact from "./Screens/Contact";
-import Error from './Screens/Error';
-import User from './Screens/User';
-import More from './Screens/More';
+import Error from "./Screens/Error";
+import User from "./Screens/User";
+import More from "./Screens/More";
+import { useAppContext } from "./context/UsingContext";
 
 function AppRouter() {
+  const location = useLocation();
+  const { pathNames } = useAppContext();
+
   return (
     <>
-      <Sidebar />
-      <Navbar />
+      {location.pathname in pathNames ? <Sidebar /> : null}
+      {location.pathname in pathNames ? <Navbar /> : null}
 
-      
+      {location.pathname === "/" ? (
+        <Redirect from="/" to="/home" exact />
+      ) : null}
+
       <Switch>
-        <Route exact path="/" component={Home} />
-        <Route path="/orders" component={Orders} />
-        <Route path="/cart" component={Cart} />
-        <Route path="/contact" component={Contact} />
-         <Route path="/user" component={User} />
-         <Route path="/more" component={More} />
-         <Route path="*" component={Error} />
+        <Route exact path="/home" component={Home} />
+        <Route exact path="/orders" component={Orders} />
+        <Route exact path="/cart" component={Cart} />
+        <Route exact path="/contact" component={Contact} />
+        <Route exact path="/user" component={User} />
+        <Route exact path="/more" component={More} />
+        <Route path="*" component={Error} />
       </Switch>
     </>
   );
