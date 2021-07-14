@@ -1,0 +1,76 @@
+.error {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgb(241, 240, 240);
+}
+
+.container {
+  background: white;
+  padding: 30px;
+  height: 250px;
+  width: 450px;
+  border-radius: 10px;
+  color: rgb(197, 54, 54);
+  box-shadow: 0 2px 5px gray;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container section {
+  padding: 30px;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  background: rgba(255, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.container p {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  font-size: 25px;
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.container i {
+  font-size: 40px;
+  margin-bottom: 10px;
+}
+.container .route {
+  text-align: center;
+  text-decoration: none;
+  font-size: 15px;
+  width: 100%;
+  margin: auto;
+  cursor: pointer;
+  color: rgb(32, 86, 204);
+}
+
+.container .route:hover {
+  color: rgb(80, 132, 245);
+}
+
+@media (max-width: 750px) {
+  .container p {
+    font-size: 20px;
+  }
+  .container {
+    width: 80vw;
+  }
+  .container .route {
+    font-size: 12px;
+  }
+}
+@media (max-width: 350px) {
+  .container p {
+    font-size: 18px;
+  }
+}

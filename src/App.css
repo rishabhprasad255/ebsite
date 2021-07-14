@@ -6,8 +6,3 @@
   box-sizing: border-box;
   font-family: "Open Sans", sans-serif;
 }
-.app {
-  position: relative;
-  min-height: 100vh;
-  height: fit-content;
-}

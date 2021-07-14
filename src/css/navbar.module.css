@@ -9,6 +9,7 @@
 
 .navbar svg {
   width: 50px;
+  height: 95%;
   color: white;
   cursor: pointer;
 }
@@ -25,22 +26,26 @@
   height: 90%;
   font-size: 1rem;
 }
-.input > img {
-  background-color: #8c9294;
+.input > button {
   cursor: pointer;
+  border: none;
+  background: transparent;
   border-radius: 10px;
-  width: 30px;
+  width: 33px;
   margin: 5px;
   padding: 7px;
+}
+
+.input > button:hover {
+  background: rgba(214, 205, 205, 0.5);
 }
 .input {
   background-color: white;
   border-radius: 10px;
-  flex: 0.6;
+  flex: 0.5;
   display: flex;
   justify-content: space-between;
-
-  /* border: 3px solid black; */
+  box-shadow: 0 2px 7px rgb(46, 45, 45);
 }
 
 .nav_right_side {
