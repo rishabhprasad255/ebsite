@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import style from "../css/Devloper.module.css";
 import { developerDataGautam, developerDataRishabh } from "../utils/data";
 import avatarRishabh from "../assets/rishabh_prasad.jpeg";

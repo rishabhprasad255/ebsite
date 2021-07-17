@@ -81,6 +81,7 @@ function ChatBot() {
       }
     };
     scroll();
+    // eslint-disable-next-line
   }, [isMsgVisible, chats]);
 
   useEffect(() => {
@@ -101,6 +102,7 @@ function ChatBot() {
     }
 
     setBotMsg(ans);
+    // eslint-disable-next-line
   }, [userMsg]);
 
   return (

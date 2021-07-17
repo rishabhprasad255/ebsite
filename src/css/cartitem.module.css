@@ -1,0 +1,79 @@
+.cartitem {
+  width: 100%;
+  padding: 2%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 5px gray;
+  border-radius: 10px;
+}
+.common {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.upperContainer img {
+  flex: 0.3;
+}
+
+.upperContainer span {
+  flex: 0.3;
+
+  padding: 2%;
+}
+.upperContainer {
+  padding: 10px;
+  flex: 0.5;
+}
+
+.upperContainer span:nth-of-type(1) {
+  font-weight: bolder;
+  font-size: 1.5rem;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.upperContainer span:nth-of-type(2) {
+  font-weight: bolder;
+  font-size: 1.2rem;
+}
+.lowerContainer {
+  padding: 10px;
+  flex: 0.4;
+}
+
+.counter {
+  flex: 0.5;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.counter span {
+  font-weight: bolder;
+  font-size: 1.3rem;
+  border: 0.2px solid #eee;
+  padding: 0 5px;
+}
+
+.lowerContainer button {
+  flex: 0.2;
+  border: none;
+  padding: 2%;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px gray;
+  color: white;
+}
+
+.lowerContainer button:active {
+  transform: scale(0.98);
+}
+
+.lowerContainer button:nth-child(2) {
+  background-color: rgb(44, 143, 44);
+}
+.lowerContainer button:nth-child(3) {
+  background: rgb(235, 74, 74);
+}
