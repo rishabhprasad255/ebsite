@@ -1,0 +1,17 @@
+.category {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+
+  padding: 3%;
+}
+
+@media (max-width: 1250px) {
+  .category {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media (max-width: 750px) {
+  .category {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

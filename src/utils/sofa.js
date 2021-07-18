@@ -1,4 +1,4 @@
-const sofa = [
+export const sofa = [
   {
     id: 1,
     title: "Wakefit Dreamer Fabric 3 Seater  Sofa",

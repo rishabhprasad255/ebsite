@@ -10,7 +10,7 @@ const Modal = ({ whichComponent }) => {
     case 1:
       content = <Accor />;
       break;
-    case 2:
+    case 3:
       content = <ChatBot />;
       break;
 
@@ -22,7 +22,7 @@ const Modal = ({ whichComponent }) => {
     <div className={style.modal}>
       <div
         className={style.container}
-        style={whichComponent === 2 ? { height: "70vh" } : null}
+        style={whichComponent === 3 ? { height: "70vh" } : null}
       >
         <span className={style.cross} onClick={hideModal}>
           X

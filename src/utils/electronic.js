@@ -1,4 +1,4 @@
-const electronics = [
+export const electronics = [
   {
     id: 1,
     title: "Boult Audio ProBass Flow X Bluetooth Headset",

@@ -1,4 +1,4 @@
-const lights = [
+export const lights = [
   {
     id: 1,
     title: "HAVELLS 6 W Tube B22 Inverter Bulb",

@@ -1,4 +1,4 @@
-const homedecore = [
+export const homedecore = [
   {
     id: 1,
     title: "WallBerry Medium Self Adhesive Wall Sticker",

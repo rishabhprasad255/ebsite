@@ -1,11 +1,11 @@
 import React, { useContext, useState } from "react";
-
 const AppContext = React.createContext();
 
 const Appcontextfun = ({ children }) => {
   const [isSidebarOpen, setisSidebarOpen] = useState(false);
   const [isModalOpen, setisModalOpen] = useState(false);
   const [whichComponent, setwhichComponent] = useState(0);
+  const [category, setCategory] = useState("");
   const [cartlen, setCartlen] = useState(0);
   const [mycart, setMycart] = useState([
     {
@@ -75,6 +75,7 @@ const Appcontextfun = ({ children }) => {
     isModalOpen ? setisModalOpen(false) : setisModalOpen(true);
   };
 
+  const categoryPath = `/home/categories/${category}`;
   const pathNames = {
     "/home": "home",
     "/orders": "orders",
@@ -84,7 +85,9 @@ const Appcontextfun = ({ children }) => {
     "/login": "login",
     "/register": "register",
     "/user": "user",
+    [categoryPath]: `/home/categories/${category}`, //using key as a variable
   };
+
   const listItems = [
     { id: 1, name: "Home", i: "home", link: "/home" },
     { id: 2, name: "Orders", i: "cube", link: "/orders" },
@@ -107,6 +110,7 @@ const Appcontextfun = ({ children }) => {
         setMycart,
         cartlen,
         setCartlen,
+        setCategory,
       }}
     >
       {children}

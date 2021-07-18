@@ -1,4 +1,4 @@
-const gaming = [
+export const gaming = [
   {
     id: 1,
     title: "AMKETTE Evo Fox Game Box 32 GB with Asphalt 8, Badland,...",
