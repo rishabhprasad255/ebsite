@@ -51,6 +51,8 @@ function CategoryBar() {
     }
 
     return () => (unmount = true);
+
+    // eslint-disable-next-line
   }, []);
 
   return (
