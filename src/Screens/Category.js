@@ -10,16 +10,62 @@ import { sofa } from "../utils/sofa";
 import { useAppContext } from "../context/UsingContext";
 import Error from "../Screens/Error";
 
-function CategoryItem({ id, title, rating, price, image, url }) {
+function CategoryItem({ id, title, rating, price, image, ind }) {
   const colors = [style_item.red, style_item.green, style_item.pale];
+
+  const { cartlen, setCartlen, mycart, setMycart } = useAppContext();
+
+  const addToCart = (item) => {
+    const isDuplicate = mycart.filter((obj_item) => {
+      if (obj_item.id === item.id && obj_item.title === item.title) {
+        return obj_item;
+      }
+      return null;
+    });
+
+    if (isDuplicate.length === 0) {
+      const items = [...mycart, item];
+      setMycart(items);
+
+      const temp = cartlen + 1;
+      setCartlen(temp);
+    }
+  };
+
+  const changeText = (ind) => {
+    if (document.getElementById(`tooltip_${ind}`)) {
+      const tooltip = document.getElementById(`tooltip_${ind}`);
+      tooltip.innerText = "Added";
+      tooltip.style.color = "lightgreen";
+    }
+  };
 
   const styleColor =
     rating > 3.0 ? colors[1] : rating < 2.0 ? colors[0] : colors[2];
-  console.log(styleColor);
+
   return (
-    <div className={style_item.category_item} onClick={() => window.open(url)}>
-      <div>
+    <div className={style_item.category_item}>
+      <div className={style_item.wrapper}>
         <img src={image} alt={title} />
+        <div className={style_item.overlay}>
+          <button
+            className={style_item.btn}
+            onClick={() => addToCart({ id, title, price, image })}
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="currentColor"
+              className="bi bi-cart4"
+              viewBox="0 0 16 16"
+              onClick={() => changeText(ind)}
+            >
+              <path d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5zM3.14 5l.5 2H5V5H3.14zM6 5v2h2V5H6zm3 0v2h2V5H9zm3 0v2h1.36l.5-2H12zm1.11 3H12v2h.61l.5-2zM11 8H9v2h2V8zM8 8H6v2h2V8zM5 8H3.89l.5 2H5V8zm0 5a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0zm9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0z" />
+            </svg>
+            <small id={`tooltip_${ind}`} className={style_item.tooltip}>
+              Add To Cart{" "}
+            </small>
+          </button>
+        </div>
       </div>
       <div className={style_item.info}>
         <small>{title}</small>
@@ -33,6 +79,7 @@ function CategoryItem({ id, title, rating, price, image, url }) {
   );
 }
 
+// __________________________________________________________
 function Category() {
   const { category } = useParams();
   const { setCategory } = useAppContext();
@@ -53,6 +100,8 @@ function Category() {
     { name: "sofa", list: sofa },
   ];
 
+ 
+
   const filteredItem = categoryList.filter((item) => item.name === category);
 
   if (filteredItem.length === 0) {
@@ -61,10 +110,11 @@ function Category() {
     const { list } = filteredItem[0];
     return (
       <div className={style.category}>
-        {list.map((item) => (
+        {list.map((item, index) => (
           <CategoryItem
             key={`${item.id}_${item.title}`}
             {...item}
+            ind={index}
             className={style_item.item}
           />
         ))}

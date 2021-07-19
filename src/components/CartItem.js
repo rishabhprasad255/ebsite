@@ -5,7 +5,7 @@ import style from "../css/cartitem.module.css";
 function CartItem({ id, title, url, price, image }) {
   const [num, setNum] = React.useState(1);
 
-  const { mycart, setMycart } = useAppContext();
+  const { mycart, setMycart, cartlen, setCartlen } = useAppContext();
 
   const deleteFromCart = (id, title) => {
     const filteredcart = mycart.filter(
@@ -13,6 +13,8 @@ function CartItem({ id, title, url, price, image }) {
     );
 
     setMycart(filteredcart);
+    const temp = cartlen - 1;
+    setCartlen(temp);
   };
 
   const increase = () => {
