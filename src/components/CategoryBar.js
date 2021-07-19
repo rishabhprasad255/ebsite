@@ -51,9 +51,7 @@ function CategoryBar() {
     }
 
     return () => (unmount = true);
-
-    // eslint-disable-next-line
-  }, []);
+  }, [location]);
 
   return (
     <div className={style.category_bar}>

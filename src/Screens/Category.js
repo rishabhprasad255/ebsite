@@ -82,15 +82,6 @@ function CategoryItem({ id, title, rating, price, image, ind }) {
 // __________________________________________________________
 function Category() {
   const { category } = useParams();
-  const { setCategory } = useAppContext();
-
-  React.useEffect(() => {
-    const effect = () => {
-      setCategory(category);
-    };
-    return effect();
-    // eslint-disable-next-line
-  }, [category]);
 
   const categoryList = [
     { name: "electronics", list: electronics },
@@ -99,8 +90,6 @@ function Category() {
     { name: "lights", list: lights },
     { name: "sofa", list: sofa },
   ];
-
- 
 
   const filteredItem = categoryList.filter((item) => item.name === category);
 

@@ -17,7 +17,8 @@
 }
 
 .category:hover {
-  background: rgba(255, 255, 255, 0.7);
+  background: rgba(255, 255, 255, 0.7) !important;
+  color: black !important;
 }
 
 @media (max-width: 750px) {
