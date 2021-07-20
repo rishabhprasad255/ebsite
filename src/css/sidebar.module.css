@@ -13,7 +13,11 @@
   margin-top: 70px;
 }
 .sidebar i {
-  margin: 0 15px;
+  width: 10% !important;
+  margin-right: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .sidebar ul li {
   padding: 10px;
@@ -21,7 +25,7 @@
   margin-left: 15px;
   font-size: 1.3rem;
   cursor: pointer;
-  display: block;
+  display: flex;
   color: white;
   border-radius: 5px 0 0 5px;
   transition: all 0.3s ease;
@@ -53,7 +57,4 @@
 
 .shrinker:hover {
   background: #eee;
-}
-
-@media (max-width: 1250px) {
 }

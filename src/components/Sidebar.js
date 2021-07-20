@@ -3,6 +3,7 @@ import style from "../css/sidebar.module.css";
 import "../css/sidebar.css";
 import { useAppContext } from "../context/UsingContext";
 import { Link, useLocation } from "react-router-dom";
+
 function Sidebar() {
   const { isSidebarOpen, hideSideBar, listItems, pathNames } = useAppContext();
   const location = useLocation();
@@ -23,6 +24,7 @@ function Sidebar() {
         document.getElementById("list3"),
         document.getElementById("list4"),
         document.getElementById("list5"),
+        document.getElementById("list6"),
       ];
 
       const filtered = lists.filter(
@@ -46,6 +48,7 @@ function Sidebar() {
       document.getElementById("list3"),
       document.getElementById("list4"),
       document.getElementById("list5"),
+      document.getElementById("list6"),
     ];
     lists.forEach((list) => {
       list.style.background = "transparent";
@@ -73,14 +76,21 @@ function Sidebar() {
           >
             <li id={`list${id}`} onClick={highlight}>
               <i className={`fas fa-${i}`}></i>
-              {name}
+              <span>{name}</span>
             </li>
           </Link>
         ))}
+
         <Link to="/more" style={{ textDecoration: "none", color: "white" }}>
           <li id="list5" onClick={highlight}>
             <i className={`fas fa-info`}></i>
-             More
+            <span>More</span>
+          </li>
+        </Link>
+        <Link to="/user" style={{ textDecoration: "none", color: "white" }}>
+          <li id="list6" onClick={highlight}>
+            <i className="fas fa-user"></i>
+            <span>User</span>
           </li>
         </Link>
       </ul>

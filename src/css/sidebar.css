@@ -1,9 +1,11 @@
-#list5 {
+#list5,
+#list6 {
   display: none;
 }
 
 @media (max-width: 1250px) {
-  #list5 {
-    display: block;
+  #list5,
+  #list6 {
+    display: flex;
   }
 }
