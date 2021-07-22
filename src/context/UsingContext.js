@@ -23,8 +23,6 @@ const Appcontextfun = ({ children }) => {
     "/cart": "cart",
     "/support": "support",
     "/more": "more",
-    "/login": "login",
-    "/register": "register",
     "/user": "user",
     "/home/categories/electronics": "/home/categories/electronics",
     "/home/categories/homedecore": "/home/categories/homedecore",

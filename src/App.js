@@ -13,6 +13,9 @@ import More from "./Screens/More";
 import Category from "./Screens/Category";
 import User from "./Screens/User";
 import { useAppContext } from "./context/UsingContext";
+import { ebsite, db, auth } from "./firebase/firebase";
+import Register from "./Screens/Register";
+import Login from "./Screens/Login";
 
 function AppRouter() {
   const location = useLocation();
@@ -29,6 +32,8 @@ function AppRouter() {
       ) : null}
 
       <Switch>
+        <Route exact path="/login" component={Login} />
+        <Route exact path="/register" component={Register} />
         <Route exact path="/home" component={Home} />
         <Route exact path="/orders" component={Orders} />
         <Route exact path="/cart" component={Cart} />
