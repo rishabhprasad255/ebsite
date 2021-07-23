@@ -8,7 +8,6 @@ function Home() {
   return (
     <div className={style.home}>
       <Carousel />
-
       <div className={style.tag}>Get Offer On Your Favourite Items</div>
       <div className={style.container}>
         {home_products.map((item) => (

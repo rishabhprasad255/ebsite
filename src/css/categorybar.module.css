@@ -5,6 +5,9 @@
   justify-content: space-evenly;
   padding: 10px;
   background: rgb(17, 142, 184);
+  position: fixed;
+  top: 70px;
+  z-index: 88;
 }
 
 .category {

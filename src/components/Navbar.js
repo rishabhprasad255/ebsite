@@ -1,18 +1,51 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import style from "../css/navbar.module.css";
-
+import { auth } from "../firebase/firebase";
+import DropdownButton from "react-bootstrap/DropdownButton";
+import Dropdown from "react-bootstrap/Dropdown";
 import { useAppContext } from "../context/UsingContext";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import search from "../assets/search.svg";
 
 function Navbar() {
   const { hideSideBar, isSidebarOpen } = useAppContext();
   const [input, setInput] = useState("");
+  const [user, setUser] = useState("User");
+
+  const history = useHistory();
+
+  useEffect(() => {
+    const unsubscribe = auth.onAuthStateChanged((authUser) => {
+      //to check whether a user is logged in or not
+      if (authUser) {
+        setUser(authUser.displayName.split(" ")[0]);
+      }
+    });
+    return unsubscribe;
+  }, []);
 
   const styles = {
     text: {
       textDecoration: "none",
     },
+  };
+
+  const checkUser = () => {
+    if (auth.currentUser) {
+      history.push("/user");
+    } else alert("User Not Logged In");
+  };
+
+  const logOut = (e) => {
+    e.preventDefault();
+    if (auth.currentUser) {
+      auth
+        .signOut()
+        .then(() => {
+          history.replace("/login");
+        })
+        .catch((err) => alert(err.message));
+    }
   };
 
   const handleSubmit = (e) => {
@@ -22,11 +55,11 @@ function Navbar() {
   return (
     <div className={style.navbar}>
       <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width="16"
         height="16"
+        width="16"
+        xmlns="http://www.w3.org/2000/svg"
         fill="currentColor"
-        className={`bi bi-list-ul ${style.navbar}`}
+        className={`bi bi-list-ul`}
         viewBox="0 0 16 16"
         onClick={hideSideBar}
       >
@@ -49,12 +82,45 @@ function Navbar() {
       </form>
 
       <div className={style.nav_right_side}>
-        <Link style={styles.text} to="/">
+        <Link style={styles.text} to="/home">
           Home
         </Link>
-        <Link style={styles.text} to="/user">
-          User
-        </Link>
+
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "centre",
+            alignItems: "center",
+          }}
+        >
+          <span
+            style={{ fontSize: "1.1rem", color: "white", marginRight: "5px" }}
+          >
+            {user}
+          </span>
+          <DropdownButton id="dropdown-basic-button" className={style.dropdown}>
+            <Dropdown.Item>
+              <div style={styles.text} onClick={checkUser}>
+                Settings
+              </div>
+            </Dropdown.Item>
+            {auth.currentUser ? (
+              <Dropdown.Item onClick={logOut}>Logout</Dropdown.Item>
+            ) : (
+              <Dropdown.Item>
+                <Link
+                  style={styles.text}
+                  to="#"
+                  onClick={() => {
+                    history.replace("/login");
+                  }}
+                >
+                  Login
+                </Link>
+              </Dropdown.Item>
+            )}
+          </DropdownButton>
+        </div>
         <Link style={styles.text} to="/more">
           More
         </Link>

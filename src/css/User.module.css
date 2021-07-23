@@ -2,8 +2,10 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 86vh;
+  min-height: 100vh;
   background: #046a8b;
+  padding-top: 200px;
+  width: 100vw;
 }
 .container {
   background-color: whitesmoke;

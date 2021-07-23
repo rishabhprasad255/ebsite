@@ -6,3 +6,6 @@
   box-sizing: border-box;
   font-family: "Open Sans", sans-serif;
 }
+.app {
+  position: absolute;
+}

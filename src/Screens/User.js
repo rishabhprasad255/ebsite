@@ -2,15 +2,17 @@ import React from "react";
 import style from "../css/User.module.css";
 import profile_img from "../assets/person-circle.svg";
 import { Link } from "react-router-dom";
+import { auth } from "../firebase/firebase";
 
 function User() {
   const profile = null;
   const user = {
-    username: "Akshay Kumar",
-    email: "abc@gmail.com",
-    address: "heaven",
-    dob: "45-21-2000",
+    username: auth.currentUser?.displayName || "Username",
+    email: auth.currentUser?.email || "user-email",
+    address: "NA",
+    dob: "NA",
   };
+
   return (
     <div className={style.user}>
       <div className={style.container}>

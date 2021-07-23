@@ -1,8 +1,9 @@
 .category {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-
   padding: 3%;
+  width: 100vw;
+  padding-top: 200px;
 }
 
 @media (max-width: 1250px) {

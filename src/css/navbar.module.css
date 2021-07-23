@@ -5,10 +5,13 @@
   justify-content: space-between;
   align-items: center;
   height: 70px;
+  width: 100%;
+  position: fixed;
+  z-index: 90;
 }
 
 .navbar svg {
-  width: 50px;
+  width: 40px;
   height: 95%;
   color: white;
   cursor: pointer;

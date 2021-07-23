@@ -37,7 +37,7 @@ function CartItem({ id, title, url, price, image }) {
           <button onClick={increase}>+</button>
           <button onClick={decrease}>-</button>
         </div>
-        <button onClick={() => window.open(url)}>BUY</button>
+        <button onClick={() => window.open("#")}>BUY</button>
         <button onClick={() => deleteFromCart(id, title)}>delete</button>
       </div>
     </div>

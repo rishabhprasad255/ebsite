@@ -2,10 +2,12 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 93vh;
+  height: 100vh;
   background-image: url(../assets/bg.svg);
   background-repeat: no-repeat;
   background-size: cover;
+  padding-top: 200px;
+  width: 100vw;
 }
 .container {
   width: 75%;

@@ -13,7 +13,6 @@ import More from "./Screens/More";
 import Category from "./Screens/Category";
 import User from "./Screens/User";
 import { useAppContext } from "./context/UsingContext";
-import { ebsite, db, auth } from "./firebase/firebase";
 import Register from "./Screens/Register";
 import Login from "./Screens/Login";
 
@@ -22,13 +21,13 @@ function AppRouter() {
   const { pathNames } = useAppContext();
 
   return (
-    <>
+    <div className="app">
       {location.pathname in pathNames ? <Sidebar /> : null}
       {location.pathname in pathNames ? <Navbar /> : null}
       {location.pathname in pathNames ? <CategoryBar /> : null}
 
       {location.pathname === "/" ? (
-        <Redirect from="/" to="/home" exact />
+        <Redirect from="/" to="/login" exact />
       ) : null}
 
       <Switch>
@@ -43,7 +42,7 @@ function AppRouter() {
         <Route exact path="/home/categories/:category" component={Category} />
         <Route path="*" component={Error} />
       </Switch>
-    </>
+    </div>
   );
 }
 
