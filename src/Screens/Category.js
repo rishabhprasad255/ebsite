@@ -9,6 +9,8 @@ import { lights } from "../utils/lights";
 import { sofa } from "../utils/sofa";
 import { useAppContext } from "../context/UsingContext";
 import Error from "../Screens/Error";
+import firebase from "firebase/app";
+import { db, auth } from "../firebase/firebase";
 
 function CategoryItem({ id, title, rating, price, image, ind }) {
   const colors = [style_item.red, style_item.green, style_item.pale];
@@ -24,8 +26,14 @@ function CategoryItem({ id, title, rating, price, image, ind }) {
     });
 
     if (isDuplicate.length === 0) {
-      const items = [...mycart, item];
-      setMycart(items);
+      db.collection("cart")
+        .doc(auth.currentUser.email)
+        .collection("cart_items")
+        .doc(`${item.id}__${item.title}`)
+        .set({
+          timeStamp: firebase.firestore.FieldValue.serverTimestamp(),
+          item: item,
+        });
 
       const temp = cartlen + 1;
       setCartlen(temp);

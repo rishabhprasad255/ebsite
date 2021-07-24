@@ -72,8 +72,8 @@
 }
 
 .lowerContainer button:nth-child(2) {
-  background-color: rgb(44, 143, 44);
+  background-color: rgb(134, 227, 255);
 }
 .lowerContainer button:nth-child(3) {
-  background: rgb(235, 74, 74);
+  background: #007bff;
 }

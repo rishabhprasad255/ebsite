@@ -13,6 +13,7 @@ function Navbar() {
   const [user, setUser] = useState("User");
 
   const history = useHistory();
+  //auth.currentUser is created in a brower******
 
   useEffect(() => {
     const unsubscribe = auth.onAuthStateChanged((authUser) => {
@@ -98,7 +99,11 @@ function Navbar() {
           >
             {user}
           </span>
-          <DropdownButton id="dropdown-basic-button" className={style.dropdown}>
+          <DropdownButton
+            id="dropdown-basic-button"
+            title=""
+            className={style.dropdown}
+          >
             <Dropdown.Item>
               <div style={styles.text} onClick={checkUser}>
                 Settings

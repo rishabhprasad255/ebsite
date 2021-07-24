@@ -15,6 +15,7 @@ import User from "./Screens/User";
 import { useAppContext } from "./context/UsingContext";
 import Register from "./Screens/Register";
 import Login from "./Screens/Login";
+import { auth } from "./firebase/firebase";
 
 function AppRouter() {
   const location = useLocation();
@@ -22,6 +23,9 @@ function AppRouter() {
 
   return (
     <div className="app">
+      {/* //when user is not logged in we redirect it to login*/}
+      {auth.currentUser ? null : <Redirect to="/login" />}
+
       {location.pathname in pathNames ? <Sidebar /> : null}
       {location.pathname in pathNames ? <Navbar /> : null}
       {location.pathname in pathNames ? <CategoryBar /> : null}

@@ -7,14 +7,14 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 10;
+  z-index: 89;
 }
 
 .container {
   position: relative;
   height: 420px;
   width: 500px;
-  top: -10vh;
+  top: 0;
   border-radius: 10px;
   background: white;
   display: flex;
