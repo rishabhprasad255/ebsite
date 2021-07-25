@@ -8,6 +8,8 @@ const Appcontextfun = ({ children }) => {
   const [whichComponent, setwhichComponent] = useState(0);
   const [cartlen, setCartlen] = useState(0);
   const [mycart, setMycart] = useState([]);
+  const [cartmodal, setCartmodal] = useState(false);
+  const [partid, setPartid] = useState({});
 
   const hideSideBar = () => {
     isSidebarOpen ? setisSidebarOpen(false) : setisSidebarOpen(true);
@@ -17,6 +19,9 @@ const Appcontextfun = ({ children }) => {
     setwhichComponent(val);
     isModalOpen ? setisModalOpen(false) : setisModalOpen(true);
   };
+  const hideCartModal = () => {
+    cartmodal ? setCartmodal(false) : setCartmodal(true);
+  };
 
   const pathNames = {
     "/home": "home",
@@ -25,6 +30,7 @@ const Appcontextfun = ({ children }) => {
     "/support": "support",
     "/more": "more",
     "/user": "user",
+    "/checkout": "checkout",
     "/home/categories/electronics": "/home/categories/electronics",
     "/home/categories/homedecore": "/home/categories/homedecore",
     "/home/categories/gaming": "/home/categories/gaming",
@@ -54,6 +60,11 @@ const Appcontextfun = ({ children }) => {
         setMycart,
         cartlen,
         setCartlen,
+        cartmodal,
+        setCartmodal,
+        hideCartModal,
+        setPartid,
+        partid,
       }}
     >
       {children}

@@ -12,6 +12,7 @@ import Error from "./Screens/Error";
 import More from "./Screens/More";
 import Category from "./Screens/Category";
 import User from "./Screens/User";
+import Checkout from "./Screens/Checkout";
 import { useAppContext } from "./context/UsingContext";
 import Register from "./Screens/Register";
 import Login from "./Screens/Login";
@@ -43,6 +44,7 @@ function AppRouter() {
         <Route exact path="/support" component={Support} />
         <Route exact path="/user" component={User} />
         <Route exact path="/more" component={More} />
+        <Route exact path="/checkout" component={Checkout} />
         <Route exact path="/home/categories/:category" component={Category} />
         <Route path="*" component={Error} />
       </Switch>

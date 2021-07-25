@@ -7,7 +7,15 @@
   padding: 10px;
   padding-top: 200px;
 }
-
+.modal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  background-color: rgba(14, 13, 13, 0.8);
+  height: 100vh;
+  width: 100vw;
+}
 .cart main {
   margin-bottom: 15px;
   font-weight: bold;

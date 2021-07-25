@@ -6,7 +6,19 @@ import { auth, db } from "../firebase/firebase";
 function CartItem({ id, title, url, price, image }) {
   const [num, setNum] = React.useState(1);
 
-  const { cartlen, setCartlen } = useAppContext();
+  const {
+    cartlen,
+    setCartlen,
+    hideCartModal,
+    setCartmodal,
+    cartmodal,
+    setPartid,
+  } = useAppContext();
+
+  const checkout = (id, title, price) => {
+    setCartmodal(true);
+    setPartid({ id, title, price });
+  };
 
   const deleteFromCart = (id, title) => {
     // const filteredcart = mycart.filter(
@@ -29,7 +41,7 @@ function CartItem({ id, title, url, price, image }) {
   };
 
   const decrease = () => {
-    setNum((num) => (num === 0 ? num : num - 1));
+    setNum((num) => (num === 1 ? num : num - 1));
   };
 
   return (
@@ -45,7 +57,14 @@ function CartItem({ id, title, url, price, image }) {
           <button onClick={decrease}>-</button>
           <button onClick={increase}>+</button>
         </div>
-        <button onClick={() => window.open("#")}>BUY</button>
+        <button
+          onClick={() => {
+            const p = price.split(",").join("");
+            checkout(id, title, num * p);
+          }}
+        >
+          BUY
+        </button>
         <button onClick={() => deleteFromCart(id, title)}>delete</button>
       </div>
     </div>

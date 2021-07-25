@@ -17,9 +17,10 @@
   font-weight: bolder;
   background-color: whitesmoke;
   border-radius: 20px;
+  box-shadow: 0 2px 3px gray;
 }
 .container button {
-  padding: 8px;
+  padding: 8px 15px;
   border-radius: 10px;
   background-color: #046a8b;
   color: white;
@@ -30,6 +31,7 @@
   border: none;
   border-radius: 10px;
   display: block;
+  box-shadow: 0 2px 3px gray;
 }
 .container button:hover {
   background-color: #4ba4c2;
