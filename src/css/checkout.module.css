@@ -1,8 +1,84 @@
 .checkout {
-  margin-top: 138px;
-  height: 80vh;
+  margin-top: 135px;
+  height: 88vh;
   width: 100vw;
   display: flex;
   align-items: center;
-  justify-content: center;
+  flex-direction: column;
+  justify-content: space-around;
+  background-color: rgb(235, 247, 214);
+}
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  height: 405px;
+  width: 305px;
+}
+.foreground {
+  border-radius: 20px;
+  background-color: rgb(214, 188, 74);
+  color: white;
+  box-shadow: 2px 2px 5px grey;
+  flex: 0.5;
+  margin: 10px;
+  padding: 10px;
+  font-weight: bolder;
+}
+.visa {
+  border-radius: 20px;
+  width: 20%;
+  color: white;
+  flex: 0.5;
+}
+.stripe {
+  background-color: rgb(43, 42, 42);
+  width: 72%;
+  height: 30px;
+  display: inline-block;
+}
+
+.date {
+  margin-top: 6px;
+  font-size: 0.8rem;
+}
+.number {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.clipboard {
+  margin-left: 15px;
+  cursor: pointer;
+}
+.clipboard:hover {
+  color: black;
+}
+.clipboard:active {
+  transform: scale(0.98);
+}
+
+.cvc {
+  margin-left: 10px;
+}
+
+.background {
+  border-radius: 20px;
+  box-shadow: 2px 2px 5px grey;
+  background-color: rgb(214, 188, 74);
+  color: white;
+  flex: 0.5;
+  margin: 10px;
+  padding: 10px;
+  padding-top: 30px;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.card span small {
+  position: absolute;
+  background: rgba(0, 0, 0, 0.7);
+  padding: 5px;
+  border-radius: 3px;
 }

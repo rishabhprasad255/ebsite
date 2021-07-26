@@ -70,6 +70,31 @@
   height: 30px;
 }
 
+.cart {
+  position: relative;
+}
+
+.cartTag {
+  border: 1px solid orange;
+  border-radius: 50%;
+  height: 18px;
+  width: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: orange;
+  font-weight: bolder;
+  font-size: 0.8rem;
+  position: absolute;
+  right: 5px;
+  top: 0;
+  padding: 5px;
+}
+
+.cartTag:hover {
+  color: white;
+}
+
 @media (max-width: 1250px) {
   .nav_right_side {
     flex: 0.1;
