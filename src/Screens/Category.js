@@ -15,7 +15,7 @@ import { db, auth } from "../firebase/firebase";
 function CategoryItem({ id, title, rating, price, image, ind }) {
   const colors = [style_item.red, style_item.green, style_item.pale];
 
-  const { cartlen, setCartlen, mycart, setMycart } = useAppContext();
+  const { cartlen, setCartlen, mycart} = useAppContext();
 
   const addToCart = (item) => {
     const isDuplicate = mycart.filter((obj_item) => {

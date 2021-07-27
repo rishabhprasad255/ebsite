@@ -1,0 +1,69 @@
+.invoice {
+  min-height: 100vh;
+  width: 100vw;
+  display: grid;
+  place-content: center;
+}
+
+.container {
+  height: 80vh;
+  width: 60vw;
+  box-shadow: 0 2px 5px gray;
+  padding: 1.5rem;
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: column;
+}
+
+.header,
+.footer,
+.table {
+  flex: 0.4;
+}
+
+.header,
+.footer {
+  display: flex;
+  align-items: center;
+}
+
+.left,
+.right {
+  flex: 0.5;
+  height: 100%;
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+.right > div {
+  text-align: right;
+}
+.address {
+  flex: 0.9;
+}
+
+.invoice main {
+  display: flex;
+  align-items: center;
+}
+
+.brand {
+  font-size: larger;
+  font-weight: bold;
+  color: gray;
+}
+
+@media print {
+  .button {
+    display: none;
+  }
+}
+
+@media (max-width: 750px) {
+  .container {
+    width: fit-content;
+    height: fit-content;
+    transform: scale(0.7);
+  }
+}
