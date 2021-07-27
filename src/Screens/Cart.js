@@ -25,6 +25,7 @@ function Cart() {
       });
 
       setMycart(items);
+      setCartlen(mycart.length);
     };
 
     const unsubscribe = auth.onAuthStateChanged((authUser) => {
@@ -33,15 +34,6 @@ function Cart() {
       }
     });
     return unsubscribe;
-    // eslint-disable-next-line
-  }, [mycart]);
-
-  React.useEffect(() => {
-    const effect = () => {
-      setCartlen(mycart.length);
-    };
-    return effect();
-
     // eslint-disable-next-line
   }, [mycart]);
 

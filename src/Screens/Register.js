@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React, { useState} from "react";
 import style from "../css/login_register.module.css";
 import { Link, useHistory } from "react-router-dom";
-import { auth, db } from "../firebase/firebase";
+import { auth} from "../firebase/firebase";
 
 function Register() {
   const [username, setUsername] = useState("");

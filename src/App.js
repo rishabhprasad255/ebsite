@@ -16,7 +16,7 @@ import Checkout from "./Screens/Checkout";
 import { useAppContext } from "./context/UsingContext";
 import Register from "./Screens/Register";
 import Login from "./Screens/Login";
-import { auth } from "./firebase/firebase";
+import Invoice from "./Screens/Invoice";
 
 function AppRouter() {
   const location = useLocation();
@@ -25,7 +25,7 @@ function AppRouter() {
   return (
     <div className="app">
       {/* //when user is not logged in we redirect it to login*/}
-      {auth.currentUser ? null : <Redirect to="/login" />}
+      {/* {auth.currentUser ? null : <Redirect to="/login" />} */}
 
       {location.pathname in pathNames ? <Sidebar /> : null}
       {location.pathname in pathNames ? <Navbar /> : null}
@@ -45,6 +45,7 @@ function AppRouter() {
         <Route exact path="/user" component={User} />
         <Route exact path="/more" component={More} />
         <Route exact path="/checkout" component={Checkout} />
+        <Route exact path="/invoice" component={Invoice} />
         <Route exact path="/home/categories/:category" component={Category} />
         <Route path="*" component={Error} />
       </Switch>

@@ -3,15 +3,15 @@ import { useAppContext } from "../context/UsingContext";
 import style from "../css/cartitem.module.css";
 import { auth, db } from "../firebase/firebase";
 
-function CartItem({ id, title, url, price, image }) {
+function CartItem({ id, title, price, image }) {
   const [num, setNum] = React.useState(1);
 
   const {
     cartlen,
     setCartlen,
-    hideCartModal,
+   
     setCartmodal,
-    cartmodal,
+   
     setPartid,
   } = useAppContext();
 
