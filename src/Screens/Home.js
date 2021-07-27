@@ -35,15 +35,29 @@ function Home() {
   }, [mycart]);
 
   return (
-    <div className={style.home}>
-      <Carousel />
-      <div className={style.tag}>Get Offer On Your Favourite Items</div>
-      <div className={style.container}>
-        {home_products.map((item) => (
-          <Card key={item.id} home_products={item} />
-        ))}
+    <>
+      <div className={style.home}>
+        <Carousel />
+        <div className={style.tag}>Get Offer On Your Favourite Items</div>
+        <div className={style.container}>
+          {home_products.map((item) => (
+            <Card key={item.id} home_products={item} />
+          ))}
+        </div>
       </div>
-    </div>
+      <div style={{ backgroundColor: "#046a8b", padding: "10px" }}>
+        <div
+          style={{
+            color: "white",
+            marginTop: "15px",
+            width: "100%",
+            textAlign: "center",
+          }}
+        >
+          <p>&copy; 2021 ebsite | Rishabh Prasad | Gautam Chandra Saha</p>
+        </div>
+      </div>
+    </>
   );
 }
 

@@ -12,7 +12,7 @@
 
 .carousel img {
   height: 450px;
-  object-fit: fill;
+  object-fit: cover;
 }
 
 @media (max-width: 1250px) {
