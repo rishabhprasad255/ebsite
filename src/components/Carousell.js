@@ -35,7 +35,7 @@ function Carousell() {
         <img className="d-block w-100" src={middle} alt="Third slide" />
 
         <Carousel.Caption>
-          <h3>One Stop Solution For Your Home</h3>
+          <h3>One Stop Solution For You</h3>
         </Carousel.Caption>
       </Carousel.Item>
     </Carousel>
