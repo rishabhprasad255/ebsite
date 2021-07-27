@@ -7,8 +7,15 @@ import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import { useHistory } from "react-router-dom";
 function Cart() {
-  const { mycart, setCartlen, setMycart, cartmodal, hideCartModal, partid } =
-    useAppContext();
+  const {
+    mycart,
+    setCartlen,
+    setMycart,
+    cartmodal,
+    hideCartModal,
+    partid,
+    setOrders,
+  } = useAppContext();
   const history = useHistory();
 
   React.useEffect(() => {
@@ -39,13 +46,23 @@ function Cart() {
 
   const checkoutWithOne = () => {
     hideCartModal();
+
+    setOrders([partid]);
     history.push({
       pathname: "/checkout",
       state: { partid: partid },
     });
   };
+  const date = new Date();
 
   const checkout = () => {
+    const cart_item = mycart.map((item) => {
+      return {
+        ...item,
+        timeStamp: `${date.getDate()}/0${date.getMonth()}/${date.getFullYear()} AT ${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}`,
+      };
+    });
+    setOrders(cart_item);
     hideCartModal();
     let sum = 0;
 

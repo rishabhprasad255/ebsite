@@ -8,6 +8,10 @@
   box-shadow: 0 2px 5px gray;
   border-radius: 10px;
 }
+.orders {
+  width: 600px;
+}
+
 .common {
   display: flex;
   align-items: center;
@@ -76,4 +80,10 @@
 }
 .lowerContainer button:nth-child(3) {
   background: #007bff;
+}
+
+@media (max-width: 750px) {
+  .orders {
+    width: 80vw;
+  }
 }

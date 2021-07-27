@@ -45,7 +45,7 @@ function AppRouter() {
         <Route exact path="/user" component={User} />
         <Route exact path="/more" component={More} />
         <Route exact path="/checkout" component={Checkout} />
-        <Route exact path="/invoice" component={Invoice} />
+        <Route exact path="/orders/invoice" component={Invoice} />
         <Route exact path="/home/categories/:category" component={Category} />
         <Route path="*" component={Error} />
       </Switch>

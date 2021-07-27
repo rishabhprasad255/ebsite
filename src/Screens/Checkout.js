@@ -3,8 +3,9 @@ import style from "../css/checkout.module.css";
 import StripeCheckout from "react-stripe-checkout";
 import visa from "../assets/visa_icon.svg";
 import { auth, db } from "../firebase/firebase";
-import firebase from "firebase/app";
+
 import { useHistory } from "react-router-dom";
+import { useAppContext } from "../context/UsingContext";
 
 function Checkout(props) {
   const [isNumcopied, setIsNumcopied] = useState(false);
@@ -17,20 +18,21 @@ function Checkout(props) {
 
   const history = useHistory();
 
+  const { orders } = useAppContext();
+  const date = new Date();
+
   const handleToken = (token) => {
     //this is done when our payment is successful
     db.collection("payment")
       .doc(auth.currentUser.email)
       .collection("tokens")
       .add({
-        timeStamp: firebase.firestore.FieldValue.serverTimestamp(),
+        timeStamp: `${date.getDate()}/0${date.getMonth()}/${date.getFullYear()} AT ${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}`,
         token: token,
-        title: title,
-        price: price,
+        orders: orders,
       });
 
     if (token) {
-      console.log(token);
       history.push("/orders");
     }
   };

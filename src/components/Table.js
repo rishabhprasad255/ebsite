@@ -1,8 +1,7 @@
 import React from "react";
 import Tab from "react-bootstrap/Table";
-import { auth, db } from "../firebase/firebase";
 
-function Table() {
+function Table({ price, title }) {
   return (
     <div>
       <Tab bordered>
@@ -16,8 +15,8 @@ function Table() {
         <tbody>
           <tr>
             <td>1</td>
-            <td>Mark</td>
-            <td>Otto</td>
+            <td>{title}</td>
+            <td>{price}</td>
           </tr>
         </tbody>
       </Tab>

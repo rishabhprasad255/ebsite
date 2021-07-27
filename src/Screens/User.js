@@ -24,9 +24,8 @@ function User() {
 
       setuser({
         ...user,
-        address: snapshot.docs[0]?.data().token.card.address_line1,
+        address: snapshot?.docs[0]?.data().token.card.address_line1,
       });
-      console.log(user.address);
     };
 
     const unsubscribe = auth.onAuthStateChanged((authUser) => {

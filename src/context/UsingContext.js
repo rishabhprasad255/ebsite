@@ -8,6 +8,7 @@ const Appcontextfun = ({ children }) => {
   const [whichComponent, setwhichComponent] = useState(0);
   const [cartlen, setCartlen] = useState(0);
   const [mycart, setMycart] = useState([]);
+  const [orders, setOrders] = useState([]);
   const [cartmodal, setCartmodal] = useState(false);
   const [partid, setPartid] = useState({});
 
@@ -65,6 +66,8 @@ const Appcontextfun = ({ children }) => {
         hideCartModal,
         setPartid,
         partid,
+        orders,
+        setOrders,
       }}
     >
       {children}

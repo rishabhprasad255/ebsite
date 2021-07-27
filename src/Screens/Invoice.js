@@ -5,15 +5,14 @@ import favicon from "../assets/favicon.svg";
 import { auth, db } from "../firebase/firebase";
 import Button from "react-bootstrap/Button";
 
-function Invoice() {
+function Invoice({ location }) {
   const [user, setuser] = React.useState({
     username: "NA",
     email: "NA",
     address: "NA",
     city: "NA",
   });
-
-  const [timestamp, setTimeStamp] = React.useState("");
+  const { price, title, timeStamp } = location.state;
 
   React.useEffect(() => {
     const getAddress = async () => {
@@ -26,7 +25,7 @@ function Invoice() {
       setuser({
         username: auth.currentUser?.displayName || "Username",
         email: auth.currentUser?.email || "user-email",
-        address: snapshot.docs[0]?.data().token.card.address_line1,
+        address: snapshot.docs[0]?.data().token.card.address_line1 || "NA",
         state:
           snapshot.docs[0]?.data().token.card.address_city +
           ", " +
@@ -34,11 +33,6 @@ function Invoice() {
           "     " +
           snapshot.docs[0]?.data().token.card.address_zip,
       });
-
-      const date = new Date();
-      setTimeStamp(
-        `${date.getDate()}/0${date.getMonth()}/${date.getFullYear()} AT ${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}`
-      );
     };
 
     const unsubscribe = auth.onAuthStateChanged((authUser) => {
@@ -68,15 +62,15 @@ function Invoice() {
           <div className={style.right}>
             <div>
               {"DATE: "}
-              {timestamp}
+              {timeStamp}
             </div>
           </div>
         </div>
-        <Table className={style.table} />
+        <Table className={style.table} price={price} title={title} />
 
         <hr />
         <div className={style.footer}>
-          <div className={style.left}></div>
+          <div className={style.left}>&copy;2021 ebsite</div>
           <div className={style.right}></div>
         </div>
         <Button
