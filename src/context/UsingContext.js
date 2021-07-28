@@ -33,7 +33,7 @@ const Appcontextfun = ({ children }) => {
     "/user": "user",
     "/checkout": "checkout",
     "/home/categories/electronics": "/home/categories/electronics",
-    "/home/categories/homedecore": "/home/categories/homedecore",
+    "/home/categories/home_decor": "/home/categories/home_decor",
     "/home/categories/gaming": "/home/categories/gaming",
     "/home/categories/lights": "/home/categories/lights",
     "/home/categories/sofa": "/home/categories/sofa",

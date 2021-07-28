@@ -1,9 +1,9 @@
 .orders {
   width: 100vw;
-  min-height: 100vh;
+  min-height: 90vh;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  margin-top: 200px;
+  margin-top: 60px;
 }

@@ -5,7 +5,7 @@ import { Link, useLocation } from "react-router-dom";
 function CategoryBar() {
   const categoryList = [
     "electronics",
-    "homedecore",
+    "home_decor",
     "gaming",
     "lights",
     "sofa",
